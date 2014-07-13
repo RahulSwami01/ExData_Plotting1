@@ -6,3 +6,9 @@ subdata<-data[data$Date %in% c("1/2/2007","2/2/2007"),]
 
 # Get the date
 subdata$datetime<-strptime(paste(subdata$Date,subdata$Time),"%d/%m/%Y %H:%M:%S")
+
+# Open  plot3.png
+png("plot3.png", height = 480, width = 480)
+plot(subdata$datetime,subdata$Sub_metering_1,xlab ="", ylab = "Energy sub metering", type ="l",col = 'black')
+lines(subdata$datetime,subdata$Sub_metering_2, col = "red")
+lines(subdata$datetime,subdata$Sub_metering_3, col = "blue")

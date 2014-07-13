@@ -1,3 +1,5 @@
+ ## plot1.R: Histogram of Global Active Power
+ # Read data, specify the format of each variable, na.strings is coded as ?, date in format dd/mm/yyyy, time in format hh:mm:ss
  data<-read.table("household_power_consumption.txt", sep=";", header =T, 
                   colClasses=c('character', 'character', 'numeric', 'numeric', 'numeric', 'numeric','numeric', 'numeric', 'numeric'),
                   na.strings='?')
@@ -6,3 +8,7 @@
  
  # Open plot1.png
  png("plot1.png", height = 480, width = 480)
+ hist(subdata$Global_active_power, col ='red', xlab ='Global Active Power (kilowatts)', main = 'Global Active Power')
+ 
+ # Close png file
+ dev.off()

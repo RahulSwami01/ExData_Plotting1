@@ -6,3 +6,6 @@ subdata<-data[data$Date %in% c("1/2/2007","2/2/2007"),]
 
 # Get the date
 subdata$datetime<-strptime(paste(subdata$Date,subdata$Time),"%d/%m/%Y %H:%M:%S")
+
+# Open plot2.png
+png("plot2.png", height = 480, width = 480)
